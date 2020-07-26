@@ -102,13 +102,13 @@ public class MainActivity extends AppCompatActivity
             DatabaseReference databaseReference = firebaseDatabase.getReference(user.getUid());
             StorageReference storageReference = firebaseStorage.getReference();
 
-            storageReference.child(user.getUid()).child("Images/Profile Picture").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-                    //Retrieving URI
-                    Picasso.get().load(uri).fit().centerCrop().into(profilePicView);
-                }
-            });
+//            storageReference.child(user.getUid()).child("Images/Profile Picture").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//                @Override
+//                public void onSuccess(Uri uri) {
+//                    //Retrieving URI
+//                    Picasso.get().load(uri).fit().centerCrop().into(profilePicView);
+//                }
+//            });
 
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -157,11 +157,12 @@ public class MainActivity extends AppCompatActivity
             adapter = new PdfAdapter(pdf);
         }
 
-        if(!adapter.isEmpty()) {
-            instruction.setVisibility(View.GONE);
-            PDFView.setAdapter(adapter);
-            PDFView.setLayoutManager(new LinearLayoutManager(this));
-        }
+//        if(!adapter.isEmpty()) {
+//            instruction.setVisibility(View.GONE);
+//            PDFView.setAdapter(adapter);
+//            PDFView.setLayoutManager(new LinearLayoutManager(this));
+//
+//        }
     }
 
     /*private void addIntoView(File file) {
